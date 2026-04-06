@@ -3,7 +3,7 @@
 // ===========================
 
 const CONFIG = {
-    API_URL: 'https://api.example.com/prediction', // ← UPDATE WITH YOUR API
+    API_URL: 'https://draw.ar-lottery01.com/WinGo/WinGo_1M/GetHistoryIssuePage.json', // ← UPDATE WITH YOUR API
     BASE_NUMBER: 10001,
     INITIAL_BALANCE: 5000,
     INITIAL_BET: 100,
