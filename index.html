@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0e27">
+    <title>Prediction Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🎯 Prediction Dashboard</h1>
+                <div class="api-status">
+                    <span class="status-indicator" id="apiStatus"></span>
+                    <span class="status-text" id="statusText">Offline</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Controls Section -->
+            <section class="controls">
+                <button id="startBtn" class="btn btn-primary">▶ Start</button>
+                <button id="stopBtn" class="btn btn-secondary" disabled>⏸ Stop</button>
+                <button id="resetBtn" class="btn btn-danger">↻ Reset</button>
+            </section>
+
+            <!-- Timer Section -->
+            <section class="card timer-section">
+                <h2>⏱️ Timer</h2>
+                <div class="timer-display">
+                    <span id="timer">60</span>s
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="timer-info">Next cycle in: <span id="nextCycleTime">--:--</span></p>
+            </section>
+
+            <!-- Period Section -->
+            <section class="card period-section">
+                <h2>📊 Period</h2>
+                <div class="period-display" id="periodDisplay">10001</div>
+                <p class="period-info">Current period number based on time</p>
+            </section>
+
+            <!-- Prediction Section -->
+            <section class="card prediction-section">
+                <h2>🔮 Prediction</h2>
+                <div class="prediction-display" id="predictionDisplay">
+                    <div class="prediction-value">--</div>
+                    <div class="prediction-confidence" id="predictionConfidence">0%</div>
+                </div>
+                <p class="prediction-info">AI prediction for next result</p>
+            </section>
+
+            <!-- Result Section -->
+            <section class="card result-section">
+                <h2>✨ Result</h2>
+                <div class="result-display" id="resultDisplay">
+                    <div class="result-value">--</div>
+                </div>
+                <p class="result-info">Actual API result</p>
+            </section>
+
+            <!-- Status Section -->
+            <section class="card status-section">
+                <h2>📈 Status</h2>
+                <div class="status-display" id="statusDisplay">--</div>
+                <p class="status-message" id="statusMessage">Waiting to start...</p>
+            </section>
+
+            <!-- Balance Section -->
+            <section class="card balance-section">
+                <h2>💰 Balance</h2>
+                <div class="balance-display" id="balanceDisplay">
+                    <div class="balance-amount">$5,000</div>
+                </div>
+                <div class="balance-change" id="balanceChange">+$0</div>
+            </section>
+
+            <!-- Level Section -->
+            <section class="card level-section">
+                <h2>🎮 Level</h2>
+                <div class="level-display" id="levelDisplay">
+                    <span>Level: <strong id="currentLevel">1</strong></span>
+                    <span>Bet: $<strong id="currentBet">100</strong></span>
+                </div>
+                <p class="level-info">Strategy: Martingale</p>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="card stats-section">
+                <h2>📊 Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-label">Total Trades</span>
+                        <span class="stat-value" id="totalTrades">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Wins</span>
+                        <span class="stat-value win" id="wins">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Losses</span>
+                        <span class="stat-value loss" id="losses">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Win Rate</span>
+                        <span class="stat-value" id="winRate">0%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="card history-section">
+                <h2>📜 Trade History</h2>
+                <div class="history-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Period</th>
+                                <th>Prediction</th>
+                                <th>Result</th>
+                                <th>Status</th>
+                                <th>P/L</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyBody">
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: #888;">No trades yet</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🚀 Real-Time Automated Prediction & Tracking Dashboard</p>
+            <p>Live updates every minute | API-Powered | Fully Automated</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
